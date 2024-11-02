@@ -203,7 +203,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.36058205, g: 0.54008096, b: 0.6886792, a: 1}
+  m_BackGroundColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -442,7 +442,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.16, y: 0.16, z: 0}
+  m_TileAnchor: {x: 1, y: 1, z: 1}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -487,7 +487,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826715893}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -520,8 +520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 1359078319}
-  borderTile: {fileID: 11400000, guid: f6359672d526e8f429142ad5642b7a7c, type: 2}
-  groundTile: {fileID: 11400000, guid: 315a01160b182c54c9a11fdb356c090e, type: 2}
+  borderTile: {fileID: 11400000, guid: 370ab89d6ec1c744e958aa3a178afbfd, type: 2}
+  groundTile: {fileID: 11400000, guid: 55ce0445d55a8764f8af03e2522396a4, type: 2}
+  chestTile: {fileID: 11400000, guid: 4557da0be5bc5aa409792199d80eca46, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
