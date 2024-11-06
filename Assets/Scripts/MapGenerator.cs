@@ -9,38 +9,67 @@ using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
+    // References.
     public Tilemap map;
-    public Tile borderTile, groundTile, chestTile;
+    public Tile borderTile, groundTile, chestTile, houseTile;
+
+    // Variables.
     int chestsToPlace;
     int chestsPlaced = 0;
-    int maxChests = 4;
+    int housesPlaced;
+    int housesToPlace = 0;
+    int xOffset;
+    int yOffset;
     string path = Application.dataPath + "/TextMaps/map.txt";
 
-    
-  
+    // Constants.
+    int maxChests = 4;
+    const int maxHouses = 4;
+
+
     private void Start()
     {
+        // Define random chests and houses to place.
         chestsToPlace = Random.Range(1, maxChests);
+        housesToPlace = Random.Range(1, maxHouses);
+
+        // Define random x and y within a range.
+        int randomX = Random.Range(5, 20);
+        int randomY = Random.Range(5, 10);
+
         string Textmap = GenerateMapString(23, 13);
-        Debug.Log(Textmap);
+
         ConvertMapToTilemap(Textmap);
     }
 
     string GenerateMapString(int width, int height)
     {
-        char [,] map = new char [width, height];
+        char[,] map = new char[width, height];
 
         // Define rules.
         char wall = '#';
-        char door = '@';
+        char houseTile = '@';
         char chestTile = '$';
-        char ground = '_';
+        char groundTile = '_';
 
+        int randomX = Random.Range(3, width - 3);
+        int randomY = Random.Range(3, height - 3);
+        Debug.Log("Houses placed " + housesPlaced);
         // Draw map using symbols.
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
+                map[x, y] = groundTile;
+
+                
+                    if (x == randomX && y == randomY)
+                    {
+                        map[x, y] = houseTile;
+                        housesPlaced++;
+                    }
+                
+
                 if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
                 {
                     // Draw the border
@@ -58,15 +87,12 @@ public class MapGenerator : MonoBehaviour
                     else
                     {
                         // Placed ground elsewhere
-                        map[x, y] = ground;
+                        map[x, y] = groundTile;
                     }
                 }
-                else
-                {
-                    // Draw the ground
-                    map[x, y] = ground;
-                }
-            } 
+
+
+            }
         }
 
         // Convert character map to string using string builder.
@@ -104,6 +130,9 @@ public class MapGenerator : MonoBehaviour
                         break;
                     case '$':
                         map.SetTile(tilePosition, chestTile);
+                        break;
+                    case '@':
+                        map.SetTile(tilePosition, houseTile);
                         break;
                 }
             }
