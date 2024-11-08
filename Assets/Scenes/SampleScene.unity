@@ -523,6 +523,11 @@ MonoBehaviour:
   borderTile: {fileID: 11400000, guid: 370ab89d6ec1c744e958aa3a178afbfd, type: 2}
   groundTile: {fileID: 11400000, guid: 55ce0445d55a8764f8af03e2522396a4, type: 2}
   chestTile: {fileID: 11400000, guid: 4557da0be5bc5aa409792199d80eca46, type: 2}
+  houseTiles:
+  - {fileID: 11400000, guid: 50ff0320e5a237a4b8d5ca0313c9fe8f, type: 2}
+  - {fileID: 11400000, guid: afdf9a4f92a515c4cbb4ed4dbc23b4a2, type: 2}
+  rollRange: 1
+  houseChance: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

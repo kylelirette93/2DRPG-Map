@@ -11,7 +11,9 @@ public class MapGenerator : MonoBehaviour
 {
     // References.
     public Tilemap map;
-    public Tile borderTile, groundTile, chestTile, houseTile;
+    public Tile borderTile, groundTile, chestTile;
+    public Tile[] houseTiles;
+    int randomHouseIndex;
 
     // Variables.
     int chestsToPlace;
@@ -20,6 +22,8 @@ public class MapGenerator : MonoBehaviour
     int housesToPlace = 0;
     int xOffset;
     int yOffset;
+    public int rollRange;
+    public int houseChance;
     string path = Application.dataPath + "/TextMaps/map.txt";
 
     // Constants.
@@ -31,7 +35,7 @@ public class MapGenerator : MonoBehaviour
     {
         // Define random chests and houses to place.
         chestsToPlace = Random.Range(1, maxChests);
-        housesToPlace = Random.Range(1, maxHouses);
+        housesToPlace = Random.Range(1, 4);
 
         // Define random x and y within a range.
         int randomX = Random.Range(5, 20);
@@ -62,13 +66,13 @@ public class MapGenerator : MonoBehaviour
             {
                 map[x, y] = groundTile;
 
-                
-                    if (x == randomX && y == randomY)
-                    {
-                        map[x, y] = houseTile;
-                        housesPlaced++;
-                    }
-                
+
+                if (x == randomX && y == randomY)
+                {
+                    map[x, y] = houseTile;
+                    housesPlaced++;
+                }
+
 
                 if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
                 {
@@ -90,6 +94,30 @@ public class MapGenerator : MonoBehaviour
                         map[x, y] = groundTile;
                     }
                 }
+                else if ((y > 3 && y < height - 3) && (x > 3 && x < width - 3))
+                {
+                    // Do a random roll.
+                    randomHouseIndex = Random.Range(0, houseTiles.Length);
+                    int randomRoll = Random.Range(0, rollRange);
+
+                    if (housesPlaced < housesToPlace && randomRoll < houseChance)
+                    {
+                        map[x, y] = houseTile;
+                        housesPlaced++;
+                    }
+                    else
+                    {
+                        // If chests aren't to be drawn, draw ground instead
+                        map[x, y] = groundTile;
+                    }
+                }
+                else
+                {
+                    // Draw the ground
+                    map[x, y] = groundTile;
+                }
+
+
 
 
             }
@@ -132,7 +160,8 @@ public class MapGenerator : MonoBehaviour
                         map.SetTile(tilePosition, chestTile);
                         break;
                     case '@':
-                        map.SetTile(tilePosition, houseTile);
+                        randomHouseIndex = Random.Range(0, houseTiles.Length);
+                        map.SetTile(tilePosition, houseTiles[randomHouseIndex]);
                         break;
                 }
             }
