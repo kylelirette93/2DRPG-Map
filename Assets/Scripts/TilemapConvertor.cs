@@ -9,7 +9,7 @@ public class TilemapConverter
         string[] rows = mapData.Split('\n');
 
         // Offset to determine position of map in unity.
-        Vector3Int offset = new Vector3Int(-14, -7, 0);
+        Vector3Int offset = new Vector3Int(-13, -7, 0);
 
         // Iterate through each character.
         for (int y = 0; y < rows.Length; y++)
