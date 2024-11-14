@@ -489,6 +489,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 524970925074844287, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524970925074844287, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524970925074844287, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524970925074844287, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 177.65
+      objectReference: {fileID: 0}
     - target: {fileID: 633412771088630433, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -501,6 +517,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 945459225}
+    - target: {fileID: 1830653978219184704, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830653978219184704, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830653978219184704, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830653978219184704, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951119904286365491, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -142.86
+      objectReference: {fileID: 0}
     - target: {fileID: 3879699248235617664, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -589,6 +625,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 945459225}
+    - target: {fileID: 7256143512051111271, guid: 1c9d616e59e272245a32cd5298f647fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -175.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

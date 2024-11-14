@@ -13,8 +13,8 @@ public class MapGenerator : MonoBehaviour
     private const int maxChests = 4;
     private const int maxHouses = 4;
 
-    private string[] mapPaths = {"Assets/textmaps/map.txt", "Assets/textmaps/map2.txt", 
-        "Assets/textmaps/map3.txt", "Assets/textmaps/map4.txt", "Assets/textmaps/map5.txt"};
+    private string[] mapPaths = {"map.txt", "map2.txt", 
+        "map3.txt", "map4.txt", "map5.txt"};
     
     private void Start()
     {
